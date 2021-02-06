@@ -1,0 +1,19 @@
+df<-(read.csv("survey.csv"))
+new<-df[which(df$Benutzt.du.Instagram.=="Ja"),]
+new <- new[which(new$Wie.alt.bist.du.>17),]
+new <- new[-(1:7),]
+new <- new[(which(new$Datum.Abgeschickt!="")),]
+new <- new[,-c(2:7)]
+
+namen <- c("ID","insta","alter","instazeit","folgen","nutzung.soz.kon","nutzung.com","nutzung.mode","nutzung.inf",
+"nutzung.pol","nutzung.sport","nutzung.art","nutzung.shop","nutzung.sonst","aktiv.gucken","aktiv.liken",
+"aktiv.speichern","aktiv.teilen","aktiv.komm","aktiv.erst","pol.inter","pol.inter.umf",
+"pol.themen.text","pol.themen.corona","pol.themen.hanau","pol.themen.moria","pol.themen.blm",
+"pol.themen.us","pol.themen.klima","pol.themen.fleisch","pol.themen.thuer","pol.themen.berg",
+"pol.themen.gift","demo","parteimitglied","bundestagswahl","sonntagsfrage","sonntagsfrage.text",
+"info.zeitung","info.tv","info.socialm","info.portal","info.pers","info.audio",
+"info.video","info.text","insta.info","pol.aktiv.gucken","pol.aktiv.liken","pol.aktiv.speichern","pol.aktiv.teilen",
+"pol.aktiv.komm","pol.aktiv.erst","pol.folgen","pol.uebereinst","insta.themen.corona","insta.themen.hanau","insta.themen.moria","insta.themen.blm",
+"insta.themen.us","insta.themen.klima","insta.themen.fleisch","insta.themen.thuer","insta.themen.berg",
+"insta.themen.gift","themenunterschiede","themenunterschiede.text","pol.inter.anders","pol.meinung.fest","pol.offen",
+"byebye","byebye.text")
